@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Mallika Ramesh Chourasia</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Mallika Ramesh Chourasia</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>All projects</h2>
+      <p>Browse everything here, or explore by skill from the home page.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="badge-row"><span class="badge flagship">Flagship project</span></div>
+      <h3>Chicago Crime &amp; Safety Analysis</h3>
+      <div class="block-label">Business problem</div>
+      <p>Studying neighborhood-level crime patterns in Chicago and whether socioeconomic indicators help explain variation in crime rates.</p>
+      <div class="block-label">Approach</div>
+      <p>Built a 4-stage pipeline on real data: ingestion from the Chicago Data Portal and U.S. Census (~1.48M records) → cleaning &amp; transformation → SQL-based analysis → a Tableau dashboard for exploration.</p>
+      <div class="block-label">Key finding</div>
+      <p>Socioeconomic indicators showed only a weak relationship with crime rate (R² ≈ 0.03) — reported honestly as a weak result rather than oversold as a strong correlation.</p>
+      <p class="why">Why this one: I live in Chicago, so I wanted to actually dig into my own city's data instead of a generic dataset.</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/chicago-crime-analysis" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="badge-row"><span class="badge note">Synthetic data</span></div>
+      <h3>Netflix Content Analytics</h3>
+      <div class="block-label">Business problem</div>
+      <p>Exploring genre trends, ratings distribution, and content release patterns for a streaming catalog.</p>
+      <div class="block-label">Approach</div>
+      <p>Python/pandas exploratory data analysis on a dataset structured to mirror the real Kaggle Netflix Titles dataset.</p>
+      <div class="data-note"><strong>Data note:</strong> this project runs on a synthetic sample generated to mirror the structure of the real Kaggle dataset, not the actual Netflix catalog — findings illustrate the analysis approach, not real-world conclusions about Netflix.</div>
+      <p class="why">Why this one: wanted hands-on reps with end-to-end EDA and trend analysis.</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/netflix-analytics" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="badge-row"><span class="badge wip">Work in progress</span></div>
+      <h3>Spotify Analytics</h3>
+      <div class="block-label">Business problem</div>
+      <p>Investigating what track- and artist-level features correlate with popularity.</p>
+      <div class="block-label">Status</div>
+      <p>Pipeline and structure are in place; key findings are still being written up. Runs on a synthetic sample dataset for now.</p>
+      <p class="why">Why this one: continuing to build out feature-analysis skills on streaming data.</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/spotify-analytics" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="badge-row"><span class="badge note">Builds on synthetic data</span></div>
+      <h3>Content Platforms Comparison</h3>
+      <div class="block-label">Business problem</div>
+      <p>Comparing how supply-side data (a content catalog) and demand-side data (listening/viewing behavior) tell different stories about a platform.</p>
+      <div class="block-label">Approach</div>
+      <p>A synthesis project drawing on the Netflix and Spotify analyses to reason through catalog structure versus engagement patterns.</p>
+      <div class="data-note"><strong>Data note:</strong> inherits the synthetic-data caveat from the Netflix and Spotify projects it builds on.</div>
+      <p class="why">Why this one: wanted to think through how catalog data and engagement data can lead to different conclusions about the same platform.</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/content-platforms-comparison" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk data</h2>
+    <p>Open to Data Analyst, BI Analyst, and Data Engineer roles.</p>
+    <div class="footer-links">
+      <a href="mailto:chourasiamallika5@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/mallikachourasia/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Mallika56" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="copyright">© 2026 Mallika Ramesh Chourasia · Chicago, IL</p>
+  </div>
+</footer>
+
+</body>
+</html>
