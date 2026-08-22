@@ -20,8 +20,14 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
+<div class="banner">
+  <svg viewBox="0 0 1600 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="800" cy="230" r="120" fill="#F6D9C4" opacity="0.55"/>
+    <path d="M0,420 L220,230 L420,380 L620,190 L860,400 L1080,240 L1300,390 L1600,260 L1600,620 L0,620 Z" fill="#C3B8D9" opacity="0.55"/>
+    <path d="M0,480 L260,320 L500,440 L760,290 L1020,460 L1280,330 L1600,470 L1600,620 L0,620 Z" fill="#D9A9A0" opacity="0.55"/>
+    <path d="M0,540 L300,410 L560,520 L840,390 L1120,530 L1400,420 L1600,520 L1600,620 L0,620 Z" fill="#B8CBB0" opacity="0.6"/>
+  </svg>
+  <div class="banner-content">
     <span class="eyebrow">Data Analytics &amp; Data Engineering</span>
     <h1>Hi, I'm Mallika 👋</h1>
     <p>I turn messy, real-world data into pipelines and dashboards people actually trust — built with SQL, Python, Power BI, Tableau, and AWS.</p>
@@ -30,7 +36,7 @@
       <a class="btn btn-outline" href="about.html">About me</a>
     </div>
   </div>
-</header>
+</div>
 
 <section class="section">
   <div class="wrap">
@@ -38,31 +44,75 @@
       <h2>Explore by skill</h2>
       <p>Each category holds hands-on projects — click through to see the work.</p>
     </div>
-    <div class="tiles">
-      <a class="tile sql" href="sql.html">
-        <h3>SQL</h3>
-        <p>Querying, joins, window functions, real datasets</p>
-        <div class="go">Explore SQL →</div>
+
+    <div class="big-tiles">
+      <a class="big-tile sql" href="sql.html">
+        <div class="icon-wrap">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#4A6B7C" stroke-width="1.6">
+            <ellipse cx="12" cy="5" rx="8" ry="3"/>
+            <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>
+            <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>
+          </svg>
+        </div>
+        <div>
+          <h3>SQL</h3>
+          <p>Querying, joins, window functions, and analysis on real, large-scale datasets.</p>
+          <span class="go">Explore SQL →</span>
+        </div>
       </a>
-      <a class="tile python" href="python.html">
-        <h3>Python</h3>
-        <p>EDA, cleaning, automation, analysis</p>
-        <div class="go">Explore Python →</div>
+
+      <a class="big-tile python" href="python.html">
+        <div class="icon-wrap">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#4F6B45" stroke-width="1.6">
+            <path d="M9 4h6M6 8l-3 4 3 4M18 8l3 4-3 4M13 6l-2 12"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Python</h3>
+          <p>Pandas-driven EDA, cleaning, and automation — from raw files to a clear narrative.</p>
+          <span class="go">Explore Python →</span>
+        </div>
       </a>
-      <a class="tile powerbi" href="powerbi.html">
-        <h3>Power BI</h3>
-        <p>Dashboards, DAX, data modeling</p>
-        <div class="go">Explore Power BI →</div>
+
+      <a class="big-tile powerbi" href="powerbi.html">
+        <div class="icon-wrap">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#8A6417" stroke-width="1.6">
+            <path d="M4 20V10M10 20V4M16 20v-7M22 20v-3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Power BI</h3>
+          <p>Dashboards, DAX, and data modeling for executive-facing reporting.</p>
+          <span class="go">Explore Power BI →</span>
+        </div>
       </a>
-      <a class="tile tableau" href="tableau.html">
-        <h3>Tableau</h3>
-        <p>Interactive visualization &amp; storytelling</p>
-        <div class="go">Explore Tableau →</div>
+
+      <a class="big-tile tableau" href="tableau.html">
+        <div class="icon-wrap">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#8A483F" stroke-width="1.6">
+            <path d="M3 17l5-6 4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 21h18" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Tableau</h3>
+          <p>Interactive visualization and storytelling that make a dataset explorable.</p>
+          <span class="go">Explore Tableau →</span>
+        </div>
       </a>
-      <a class="tile awsde" href="aws.html">
-        <h3>AWS &amp; Data Engineering</h3>
-        <p>Pipelines, Airflow, Spark, cloud data</p>
-        <div class="go">Explore AWS/DE →</div>
+
+      <a class="big-tile awsde" href="aws.html">
+        <div class="icon-wrap">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#5F4E85" stroke-width="1.6">
+            <path d="M7 17a4 4 0 0 1-1-7.87A5.5 5.5 0 0 1 16.5 8 4.5 4.5 0 0 1 17 17H7z"/>
+            <path d="M9 20l3-3 3 3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3>AWS &amp; Data Engineering</h3>
+          <p>Pipelines, orchestration with Airflow, and cloud data on AWS.</p>
+          <span class="go">Explore AWS/DE →</span>
+        </div>
       </a>
     </div>
   </div>
