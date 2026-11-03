@@ -25,15 +25,22 @@
     <div class="section-head">
       <span class="cat-label awsde">AWS &amp; Data Engineering</span>
       <h2>Pipelines &amp; cloud data</h2>
-      <p>S3, Glue, Redshift, Airflow, and Spark — orchestrating data end to end.</p>
+      <p>S3, Glue, Athena, Spark, and infrastructure as code — moving data end to end.</p>
     </div>
 
     <div class="project-card">
-      <div class="badge-row"><span class="badge wip">Coming soon</span></div>
-      <h3>Building this out alongside my AWS certification</h3>
-      <p>I'm currently studying for the AWS Certified Data Engineer – Associate exam and building a pipeline project (S3 → Glue → Redshift/Athena, orchestrated with Airflow) to go along with it. Check back soon, or see my GitHub for progress.</p>
+      <div class="badge-row"><span class="badge flagship">New</span></div>
+      <h3>Chicago Divvy Lakehouse on AWS</h3>
+      <div class="block-label">Business problem</div>
+      <p>Divvy wants more annual members. Marketing needs to know when and where to reach casual riders, and the data team needs a pipeline that loads every monthly trip file reliably, flags bad records instead of silently dropping them, and keeps query costs low.</p>
+      <div class="block-label">Approach</div>
+      <p>An AWS lakehouse defined in CloudFormation: monthly files land in an S3 raw zone, and a Glue PySpark job applies 11 data-quality rules. Rule-breaking rows go to a quarantine table with a reason code, and clean rows are written as Parquet partitioned by year and month, then queried in Athena with partition projection and a per-query scan cap. The same transformation code runs locally and is covered by 23 pytest tests and GitHub Actions CI.</p>
+      <div class="block-label">Key findings</div>
+      <p>Members commute (8.4% of their weekday rides start in the 8am hour vs 4.4% for casual riders), while casual riders take longer leisure rides near the lakefront and museums, where 73–84% of starts are casual. The casual share swings from 42% in June to 17% in January. Fixing a Spark small-files issue cut the curated output from 2,368 files (7× the raw size) to 12 files (0.4× raw).</p>
+      <div class="data-note"><strong>Data note:</strong> runs on a 1-in-256 random sample of the real Divvy trip files (Oct 2025 – Sep 2026, 24,019 rides). Percentages are sample estimates; the deploy script loads the full ~6M rides into AWS.</div>
+      <p class="why">Why this one: it puts my AWS Data Engineer – Associate study into practice on my own city's data.</p>
       <div class="project-links">
-        <a href="https://github.com/Mallika56" target="_blank" rel="noopener">Visit my GitHub</a>
+        <a href="https://github.com/Mallika56/chicago-divvy-lakehouse-aws" target="_blank" rel="noopener">GitHub repo</a>
       </div>
     </div>
 
