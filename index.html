@@ -253,13 +253,16 @@ body { overflow-x:hidden; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
+
+/* Keep the four section links right-aligned without a left-side name. */
+nav .wrap { justify-content:flex-end; }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="brand">Mallika Ramesh Chourasia</div>
+    
     <div class="navlinks">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
@@ -310,6 +313,23 @@ body { overflow-x:hidden; }
   carousel.querySelector('.carousel-prev').addEventListener('click', () => show(current - 1));
   carousel.querySelector('.carousel-next').addEventListener('click', () => show(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  // Advance automatically every three seconds, while retaining manual controls.
+  // Pause when the user hovers or focuses on the carousel.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let autoplay = null;
+  function stopAutoplay() { if (autoplay !== null) { clearInterval(autoplay); autoplay = null; } }
+  function startAutoplay() {
+    if (reduceMotion || autoplay !== null || document.hidden) return;
+    autoplay = setInterval(() => show(current + 1), 3000);
+  }
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', event => {
+    if (!carousel.contains(event.relatedTarget)) startAutoplay();
+  });
+  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
+  startAutoplay();
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
     if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); }
