@@ -20,23 +20,53 @@
   </div>
 </nav>
 
-<div class="banner">
-  <svg viewBox="0 0 1600 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="800" cy="230" r="120" fill="#F6D9C4" opacity="0.55"/>
-    <path d="M0,420 L220,230 L420,380 L620,190 L860,400 L1080,240 L1300,390 L1600,260 L1600,620 L0,620 Z" fill="#C3B8D9" opacity="0.55"/>
-    <path d="M0,480 L260,320 L500,440 L760,290 L1020,460 L1280,330 L1600,470 L1600,620 L0,620 Z" fill="#D9A9A0" opacity="0.55"/>
-    <path d="M0,540 L300,410 L560,520 L840,390 L1120,530 L1400,420 L1600,520 L1600,620 L0,620 Z" fill="#B8CBB0" opacity="0.6"/>
-  </svg>
-  <div class="banner-content">
-    <span class="eyebrow">Data Analytics &amp; Data Engineering</span>
-    <h1>Hi, I'm Mallika 👋</h1>
-    <p>I turn messy, real-world data into pipelines and dashboards people actually trust — built with SQL, Python, Power BI, Tableau, and AWS.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" href="projects.html">View my projects</a>
-      <a class="btn btn-outline" href="about.html">About me</a>
-    </div>
+<section class="photo-carousel" aria-label="Portfolio introduction" aria-roledescription="carousel">
+  <div class="carousel-slide is-active" style="--slide-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=85')" aria-hidden="false">
+    <div class="slide-content"><p class="slide-kicker">Welcome to my portfolio</p><h1>Hi, I'm Mallika.</h1><p>Data, curiosity, and a little bit of Chicago.</p></div>
   </div>
-</div>
+  <div class="carousel-slide" style="--slide-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=85')" aria-hidden="true">
+    <div class="slide-content"><p class="slide-kicker">A little introduction</p><h2>Welcome to my little corner of the data world.</h2><p>Where questions become projects and ideas turn into something useful.</p></div>
+  </div>
+  <div class="carousel-slide" style="--slide-image:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=85')" aria-hidden="true">
+    <div class="slide-content"><p class="slide-kicker">Explore a little</p><h2>My work, thoughts, and everything in between.</h2><p>Take a look around.</p></div>
+  </div>
+  <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous slide">&#10094;</button>
+  <button class="carousel-arrow carousel-next" type="button" aria-label="Next slide">&#10095;</button>
+  <div class="carousel-dots" aria-label="Choose slide">
+    <button class="carousel-dot is-active" type="button" aria-label="Go to slide 1" aria-current="true"></button>
+    <button class="carousel-dot" type="button" aria-label="Go to slide 2"></button>
+    <button class="carousel-dot" type="button" aria-label="Go to slide 3"></button>
+  </div>
+</section>
+<script>
+(() => {
+  const carousel = document.querySelector('.photo-carousel');
+  if (!carousel) return;
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
+  const dots = [...carousel.querySelectorAll('.carousel-dot')];
+  let current = 0;
+  function show(next) {
+    current = (next + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const active = i === current;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === current);
+      if (i === current) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+  carousel.querySelector('.carousel-prev').addEventListener('click', () => show(current - 1));
+  carousel.querySelector('.carousel-next').addEventListener('click', () => show(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  carousel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); }
+  });
+})();
+</script>
 
 <section class="section">
   <div class="wrap">
