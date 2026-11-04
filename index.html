@@ -256,6 +256,14 @@ body { overflow-x:hidden; }
 
 /* Keep the four section links right-aligned without a left-side name. */
 nav .wrap { justify-content:flex-end; }
+
+/* Long-form About section: readable width and natural page height. */
+.about-panel { align-items:flex-start; }
+.about-story { max-width:820px; }
+.about-story h2 { text-align:center; margin-bottom:38px; }
+.about-story .about-copy { font-size:clamp(1rem,1.4vw,1.14rem); line-height:1.85; }
+.about-story .about-copy p + p { margin-top:24px; }
+.about-story .about-copy strong { color:#fff; }
 </style>
 </head>
 <body>
@@ -321,9 +329,18 @@ nav .wrap { justify-content:flex-end; }
 </script>
 
 <section id="about" class="full-panel about-panel" aria-labelledby="about-heading">
-  <div class="panel-inner about-layout">
-    <div><p class="panel-eyebrow">01 / About</p><h2 id="about-heading">A little about <em>me.</em></h2><p class="panel-lead">I turn messy data into useful answers, thoughtful dashboards, and reliable pipelines.</p></div>
-    <div class="about-copy"><p>I'm Mallika, a data analytics and data engineering practitioner with an MS in Management Information Systems from the University of Illinois Chicago. I enjoy work that starts with a real question and ends with something people can actually use.</p><p>My toolkit includes Python, SQL, Tableau, Power BI, and AWS. I care about clear communication, reproducible analysis, and being honest about what the data can—and can't—tell us.</p><a class="panel-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a></div>
+  <div class="panel-inner about-story">
+    <h2 id="about-heading">About Me</h2>
+    <div class="about-copy">
+      <p>I've always been curious about how things work and why they work the way they do. I enjoy asking questions, figuring things out, and learning something new along the way. I think that's what eventually led me toward data.</p>
+      <p>I started with a background in Electronics and Telecommunication Engineering, where I developed an interest in artificial intelligence and machine learning. That interest grew over time and brought me to Chicago, where I pursued my Master's in Management Information Systems at the University of Illinois Chicago.</p>
+      <p>Most of my time is spent working with data, writing code, building dashboards, or trying to figure out why something isn't working the way I expected. I enjoy working with <strong>Python, SQL, Tableau, Power BI, and AWS</strong>, but what I find most interesting is understanding what the data is actually telling us.</p>
+      <p>Through my work at UIC, I've had the opportunity to work with startup data, business reports, and marketing analytics. I've also explored <strong>natural language processing and machine learning</strong> through my research on emotional suppression in men's online conversations. It's a project that started with a simple question and turned into something I genuinely enjoyed working on.</p>
+      <p>Outside of academics and work, I enjoy exploring new things, learning at my own pace, and getting involved in different communities. I like meeting people, hearing their stories, and occasionally stepping away from my laptop to enjoy everything else life has to offer.</p>
+      <p>I'm still learning, experimenting, and figuring out where I want to take my interests next. This website is a small collection of what I've worked on so far and the things I've learned along the way.</p>
+      <p>Feel free to look around!</p>
+      <a class="panel-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a>
+    </div>
   </div>
   <a class="panel-down" href="#projects" aria-label="Scroll to projects">↓</a>
 </section>
