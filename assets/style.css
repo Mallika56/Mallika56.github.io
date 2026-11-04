@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root{
-  --bg:#FAF7F5;
+  --bg:#F1F7F8;
   --surface:#FFFFFF;
-  --border:#EDE7E2;
-  --text:#3A3A3A;
-  --muted:#7A7A7A;
+  --border:#D8E6E8;
+  --text:#172B40;
+  --muted:#526A77;
 
-  --sql:#A8C5D6;
-  --sql-deep:#6E97AC;
-  --python:#B8CBB0;
-  --python-deep:#83A277;
-  --powerbi:#E8CFA0;
-  --powerbi-deep:#C9A25C;
-  --tableau:#D9A9A0;
-  --tableau-deep:#B97267;
-  --awsde:#C3B8D9;
-  --awsde-deep:#8F7DB3;
+  --sql:#A8D7E8;
+  --sql-deep:#236B91;
+  --python:#A5DCCB;
+  --python-deep:#247B69;
+  --powerbi:#B8CDEB;
+  --powerbi-deep:#375E9A;
+  --tableau:#C9B9E8;
+  --tableau-deep:#694D9C;
+  --awsde:#B5A8DF;
+  --awsde-deep:#5C468F;
 
   --font-head:'Quicksand', sans-serif;
   --font-body:'Nunito Sans', sans-serif;
@@ -166,3 +166,32 @@ nav .navlinks a:hover, nav .navlinks a.active { color:#fff; border-bottom-color:
 .carousel-dot:focus-visible,.carousel-arrow:focus-visible { outline:2px solid #fff; outline-offset:4px; }
 @media(max-width:720px) { nav .wrap {height:auto; min-height:70px; padding-top:12px; padding-bottom:12px; gap:6px;} .photo-carousel{height:66vh; min-height:430px;} .carousel-slide{padding:65px 58px;} .carousel-arrow{width:36px;height:46px;font-size:1.5rem;} .carousel-prev{left:4px}.carousel-next{right:4px} .slide-content h1,.slide-content h2{font-size:clamp(2rem,8vw,3.4rem);} }
 @media(prefers-reduced-motion:reduce) { .carousel-slide {transition:none;} }
+
+/* Ocean-inspired palette: navy, sea glass, teal, deep violet */
+nav { background:#171D38; border-bottom-color:#333C62; }
+nav .navlinks a.active,nav .navlinks a:hover { border-bottom-color:#49B6AD; }
+.photo-carousel { background:#102C43; }
+.carousel-slide { background-image:linear-gradient(90deg,rgba(8,30,51,.54),rgba(22,17,62,.28)),var(--slide-image); }
+.carousel-arrow { background:rgba(15,30,60,.38); }
+.carousel-arrow:hover,.carousel-arrow:focus-visible { background:rgba(25,24,66,.85); }
+.carousel-dot.is-active { background:#7BE1D4; border-color:#7BE1D4; }
+.section { background:var(--bg); }
+.section-head h2,.project-card h3,.tile h3,.big-tile h3 { color:#1B3554; }
+.big-tile.sql,.tile.sql { background:#D9F0F8; }
+.big-tile.python,.tile.python { background:#D9F3EA; }
+.big-tile.powerbi,.tile.powerbi { background:#E2EBFA; }
+.big-tile.tableau,.tile.tableau { background:#EAE3F8; }
+.big-tile.awsde,.tile.awsde { background:#DED8F3; }
+.big-tile { border-color:#C8DCE5; }
+.big-tile:hover,.tile:hover { box-shadow:0 12px 28px rgba(33,55,93,.13); }
+.cat-label.powerbi { color:#234E86; }
+.cat-label.tableau { color:#4C367E; }
+.badge.flagship { background:#24244D; }
+.badge.wip { background:#E4F5F1; color:#236C60; border-color:#A6D9CB; }
+.badge.note { background:#EAE5F8; color:#554080; border-color:#C7B9E6; }
+.data-note { background:#EAF5F7; border-color:#A5CDD6; color:#2E5C70; }
+footer { background:#171D38; border-top-color:#333C62; color:#F0F6FA; }
+footer h2,footer .footer-links a { color:#F0F6FA; }
+footer p,footer .copyright { color:#C4D4E1; }
+.footer-links a { border-color:#52618A; }
+.footer-links a:hover { border-color:#58C8BD; }
