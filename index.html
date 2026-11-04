@@ -159,7 +159,7 @@ nav .brand { color:#f8f6f1; }
 nav .navlinks a { color:#c7c8cd; }
 nav .navlinks a:hover, nav .navlinks a.active { color:#fff; border-bottom-color:#d7b69b; }
 .photo-carousel { position:relative; width:100%; height:clamp(420px,68vh,720px); min-height:420px; overflow:hidden; background:#10141c; color:#fff; isolation:isolate; }
-.carousel-slide { position:absolute; inset:0; display:grid; place-items:center; padding:70px 90px; opacity:0; visibility:hidden; transition:opacity .65s ease,visibility .65s; background-image:linear-gradient(90deg,rgba(8,12,19,.58),rgba(8,12,19,.38)),var(--slide-image); background-position:center; background-size:cover; text-align:center; }
+.carousel-slide { position:absolute; inset:0; display:grid; place-items:center; padding:70px 90px; opacity:0; visibility:hidden; transition:opacity 2.5s ease,visibility 2.5s; background-image:linear-gradient(90deg,rgba(8,12,19,.58),rgba(8,12,19,.38)),var(--slide-image); background-position:center; background-size:cover; text-align:center; }
 .carousel-slide.is-active { opacity:1; visibility:visible; z-index:1; }
 .slide-content { max-width:850px; text-shadow:0 2px 24px rgba(0,0,0,.35); }
 .slide-kicker { font-size:.79rem; text-transform:uppercase; letter-spacing:.22em; font-weight:700; margin-bottom:18px; }
@@ -313,23 +313,6 @@ nav .wrap { justify-content:flex-end; }
   carousel.querySelector('.carousel-prev').addEventListener('click', () => show(current - 1));
   carousel.querySelector('.carousel-next').addEventListener('click', () => show(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-  // Keep the carousel moving every five seconds, including while hovered.
-  // Pause only when the page is hidden or a carousel control has keyboard focus.
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let autoplay = null;
-  function stopAutoplay() {
-    if (autoplay !== null) { clearInterval(autoplay); autoplay = null; }
-  }
-  function startAutoplay() {
-    if (reduceMotion || autoplay !== null || document.hidden) return;
-    autoplay = setInterval(() => show(current + 1), 5000);
-  }
-  carousel.addEventListener('focusin', stopAutoplay);
-  carousel.addEventListener('focusout', event => {
-    if (!carousel.contains(event.relatedTarget)) startAutoplay();
-  });
-  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
-  startAutoplay();
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
     if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); }
