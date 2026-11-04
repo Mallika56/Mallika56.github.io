@@ -313,17 +313,17 @@ nav .wrap { justify-content:flex-end; }
   carousel.querySelector('.carousel-prev').addEventListener('click', () => show(current - 1));
   carousel.querySelector('.carousel-next').addEventListener('click', () => show(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-  // Advance automatically every three seconds, while retaining manual controls.
-  // Pause when the user hovers or focuses on the carousel.
+  // Keep the carousel moving every three seconds, including while hovered.
+  // Pause only when the page is hidden or a carousel control has keyboard focus.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let autoplay = null;
-  function stopAutoplay() { if (autoplay !== null) { clearInterval(autoplay); autoplay = null; } }
+  function stopAutoplay() {
+    if (autoplay !== null) { clearInterval(autoplay); autoplay = null; }
+  }
   function startAutoplay() {
     if (reduceMotion || autoplay !== null || document.hidden) return;
     autoplay = setInterval(() => show(current + 1), 3000);
   }
-  carousel.addEventListener('mouseenter', stopAutoplay);
-  carousel.addEventListener('mouseleave', startAutoplay);
   carousel.addEventListener('focusin', stopAutoplay);
   carousel.addEventListener('focusout', event => {
     if (!carousel.contains(event.relatedTarget)) startAutoplay();
