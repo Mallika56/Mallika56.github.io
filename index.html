@@ -266,6 +266,29 @@ nav .wrap { justify-content:flex-end; }
 .about-intro p + p, .about-layout .about-copy p + p { margin-top:18px; }
 .about-intro strong, .about-layout .about-copy strong { color:#fff; }
 @media(max-width:760px) { .about-layout { grid-template-columns:1fr; } }
+
+/* Notion-inspired project gallery, styled in the site's ocean/teal/purple palette. */
+.projects-panel { align-items:flex-start; }
+.projects-panel .panel-inner { max-width:1150px; }
+.projects-panel h2 { margin-bottom:12px; }
+.project-gallery { gap:22px; margin-top:32px; align-items:stretch; }
+.project-gallery .gallery-card { display:flex; flex-direction:column; overflow:hidden; min-height:0; padding:0; background:#fff; border:1px solid #d1dce8; border-radius:17px; text-decoration:none; color:#182d46; }
+.gallery-cover { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; aspect-ratio:1.6/1; overflow:hidden; }
+.cover-lakehouse { background:linear-gradient(125deg,#173c70,#1c9a9d); }
+.cover-commerce { background:linear-gradient(125deg,#194d5e,#3caa8c); }
+.cover-experiment { background:linear-gradient(125deg,#39266e,#7154a7); }
+.gallery-cover::before { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.2) 1px,transparent 1px); background-size:15px 15px; opacity:.5; }
+.cover-illustration { position:relative; display:flex; align-items:center; gap:20px; font-size:clamp(2.5rem,4.3vw,4.4rem); filter:drop-shadow(0 8px 12px rgba(0,0,0,.15)); }
+.cover-illustration span { font-family:Arial,sans-serif; color:white; font-size:clamp(1.3rem,2.4vw,2rem); font-weight:700; }
+.cover-decoration { position:relative; font-size:.7rem; font-weight:800; letter-spacing:.25em; color:rgba(255,255,255,.85); }
+.gallery-details { display:flex; flex-direction:column; flex:1; padding:22px 22px 24px; }
+.gallery-details h3 { margin:0 0 10px; font-size:1.18rem; }
+.gallery-details p { margin:0 0 16px; }
+.project-tags { display:flex; flex-wrap:wrap; gap:7px; }
+.project-tags span { padding:5px 9px; border-radius:6px; background:#e7f1f3; color:#285d69; font-size:.73rem; font-weight:700; }
+.project-tags span:nth-child(2) { background:#eee8f7; color:#594681; }
+.gallery-details .project-cta { margin-top:auto; padding-top:22px; }
+@media(max-width:760px) { .project-gallery { grid-template-columns:1fr; } .gallery-cover { aspect-ratio:1.8/1; } }
 </style>
 </head>
 <body>
@@ -350,11 +373,22 @@ nav .wrap { justify-content:flex-end; }
 </section>
 
 <section id="projects" class="full-panel projects-panel" aria-labelledby="projects-heading">
-  <div class="panel-inner"><p class="panel-eyebrow">02 / Projects</p><h2 id="projects-heading">Selected <em>work.</em></h2><p class="panel-lead">A few things I've built, explored, and learned from.</p>
-    <div class="featured-projects">
-      <a class="featured-card" href="https://github.com/Mallika56/chicago-divvy-lakehouse-aws" target="_blank" rel="noopener"><span class="project-number">01 · AWS / Data Engineering</span><h3>Divvy Lakehouse on AWS</h3><p>Building a quality-aware data pipeline with S3, Glue, PySpark, and Athena.</p><span class="project-cta">Explore project ↗</span></a>
-      <a class="featured-card" href="https://github.com/Mallika56/olist-ecommerce-dbt" target="_blank" rel="noopener"><span class="project-number">02 · Analytics Engineering</span><h3>E-Commerce Analytics with dbt</h3><p>Turning raw order data into tested, trustworthy models and insights.</p><span class="project-cta">Explore project ↗</span></a>
-      <a class="featured-card" href="https://github.com/Mallika56/ab-test-checkout-analysis" target="_blank" rel="noopener"><span class="project-number">03 · Experimentation</span><h3>A/B Test Analysis</h3><p>Making a product decision with careful statistical testing.</p><span class="project-cta">Explore project ↗</span></a>
+  <div class="panel-inner">
+    <h2 id="projects-heading">My <em>Projects</em></h2>
+    <p class="panel-lead">Some things I've worked on</p>
+    <div class="featured-projects project-gallery">
+      <a class="featured-card gallery-card" href="https://github.com/Mallika56/chicago-divvy-lakehouse-aws" target="_blank" rel="noopener">
+        <div class="gallery-cover cover-lakehouse" aria-hidden="true"><span class="cover-illustration">☁️ <span>↔</span> 🗄️</span><span class="cover-decoration">DATA PIPELINE</span></div>
+        <div class="gallery-details"><h3>Divvy Lakehouse on AWS</h3><p>Building a quality-aware data pipeline with S3, Glue, PySpark, and Athena.</p><div class="project-tags"><span>AWS</span><span>Data Engineering</span><span>PySpark</span></div><span class="project-cta">Explore project ↗</span></div>
+      </a>
+      <a class="featured-card gallery-card" href="https://github.com/Mallika56/olist-ecommerce-dbt" target="_blank" rel="noopener">
+        <div class="gallery-cover cover-commerce" aria-hidden="true"><span class="cover-illustration">🛒 <span>→</span> 📊</span><span class="cover-decoration">ANALYTICS</span></div>
+        <div class="gallery-details"><h3>E-Commerce Analytics with dbt</h3><p>Turning raw order data into tested, trustworthy models and insights.</p><div class="project-tags"><span>SQL</span><span>dbt</span><span>Analytics Engineering</span></div><span class="project-cta">Explore project ↗</span></div>
+      </a>
+      <a class="featured-card gallery-card" href="https://github.com/Mallika56/ab-test-checkout-analysis" target="_blank" rel="noopener">
+        <div class="gallery-cover cover-experiment" aria-hidden="true"><span class="cover-illustration">🅰️ <span>vs</span> 🅱️</span><span class="cover-decoration">EXPERIMENTATION</span></div>
+        <div class="gallery-details"><h3>A/B Test Analysis</h3><p>Making a product decision with careful statistical testing.</p><div class="project-tags"><span>A/B Testing</span><span>Statistics</span><span>Python</span></div><span class="project-cta">Explore project ↗</span></div>
+      </a>
     </div>
     <a class="panel-link" href="#contact">Get in touch <span aria-hidden="true">↓</span></a>
   </div>
