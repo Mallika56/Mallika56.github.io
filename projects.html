@@ -59,6 +59,20 @@
     </div>
 
     <div class="project-card">
+      <div class="badge-row"><span class="badge flagship">New</span></div>
+      <h3>Olist E-Commerce Analytics Engineering (dbt)</h3>
+      <div class="block-label">Business problem</div>
+      <p>An online marketplace needs trustworthy order, seller and customer tables, and wants to know how much late deliveries cost in customer satisfaction.</p>
+      <div class="block-label">Approach</div>
+      <p>Modeled 9 raw sources (99,441 real orders) with dbt and DuckDB through staging, intermediate and mart layers into a star schema: two fact tables at different grains and four dimensions. Covered by 81 data tests, 2 dbt unit tests and reconciliation checks between layers, with GitHub Actions CI.</p>
+      <div class="block-label">Key findings</div>
+      <p>Late deliveries are 6.7% of orders but 32.5% of all 1–2 star reviews (2.27 vs 4.29 stars). The late rate tripled around Black Friday and in Feb–Mar 2018, and same-state shipments arrive in about half the time (7.9 vs 15.0 days).</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/olist-ecommerce-dbt" target="_blank" rel="noopener">GitHub repo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
       <div class="badge-row"><span class="badge note">Synthetic data</span></div>
       <h3>Netflix Content Analytics</h3>
       <div class="block-label">Business problem</div>
