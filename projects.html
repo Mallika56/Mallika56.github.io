@@ -73,6 +73,21 @@
     </div>
 
     <div class="project-card">
+      <div class="badge-row"><span class="badge flagship">New</span></div>
+      <h3>A/B Test Analysis: Should We Ship the New Landing Page?</h3>
+      <div class="block-label">Business problem</div>
+      <p>An e-commerce site tested a redesigned landing page on 294,478 sessions. Should it replace the current page?</p>
+      <div class="block-label">Approach</div>
+      <p>Full experiment readout in Python and SQL: data-integrity checks that uncovered a logging bug (3,894 users recorded twice), a sample-ratio-mismatch check, power analysis, a two-proportion z-test with confidence intervals, a Bayesian comparison, time-stability and Holm-corrected country segments, and a simulation of how peeking inflates false positives. 14 tests validate the formulas against statsmodels and scipy.</p>
+      <div class="block-label">Key finding</div>
+      <p>The new page converted at 11.87% vs 12.02% (−1.2%, 95% CI −3.2% to +0.8%, p = 0.23). The best case is below the +1% lift needed to justify the change, so the recommendation is not to ship, documented in a one-page decision memo.</p>
+      <div class="project-links">
+        <a href="https://github.com/Mallika56/ab-test-checkout-analysis" target="_blank" rel="noopener">GitHub repo</a>
+        <a href="https://github.com/Mallika56/ab-test-checkout-analysis/blob/main/docs/decision_memo.md" target="_blank" rel="noopener">Decision memo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
       <div class="badge-row"><span class="badge note">Synthetic data</span></div>
       <h3>Netflix Content Analytics</h3>
       <div class="block-label">Business problem</div>
