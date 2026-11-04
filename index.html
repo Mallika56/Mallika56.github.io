@@ -424,5 +424,43 @@ nav .wrap { justify-content:flex-end; }
   </div>
 </footer>
 
+<script>
+(() => {
+  const links = [...document.querySelectorAll('nav .navlinks a[href^="#"]')];
+  const sections = links.map(link => document.querySelector(link.getAttribute('href')));
+  if (sections.some(section => !section)) return;
+
+  function updateActiveSection() {
+    const marker = window.scrollY + 70 + Math.min(window.innerHeight * 0.32, 220);
+    let selected = 0;
+    sections.forEach((section, index) => {
+      if (section.offsetTop <= marker) selected = index;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+      selected = sections.length - 1;
+    }
+    links.forEach((link, index) => {
+      const active = index === selected;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  let scheduled = false;
+  window.addEventListener('scroll', () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => { scheduled = false; updateActiveSection(); });
+  }, { passive:true });
+  window.addEventListener('resize', updateActiveSection);
+  window.addEventListener('hashchange', updateActiveSection);
+  links.forEach(link => link.addEventListener('click', () => {
+    links.forEach(item => item.classList.toggle('active', item === link));
+  }));
+  updateActiveSection();
+  window.addEventListener('load', updateActiveSection);
+})();
+</script>
 </body>
 </html>
